@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+// body,
+// html {
+//     background-color: black;
+// }
+
+header {
+    font-family: sans-serif;
+
+    .navbar {
+        // position: fixed;
+        z-index: 999;
+        top: 0;
+        padding: 30px 0;
+        width: 100%;
+        background-color: white;
+        transition: 0.3s linear;
+
+        .container {
+            margin: auto;
+            max-width: 1300px;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            #logo {
+                width: 44px;
+                height: 33px;
+                // background-image: url();
+                // background-size: contain;
+                color: #000;
+            }
+            .MudarMenu {
+                background: none;
+                width: 30px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                position: relative;
+                z-index: 999;
+                display: none;
+                span {
+                    display: block;
+                    height: 3px;
+                    background-color: #000;
+                    margin: 6px 0;
+                    position: relative;
+                    transition: 0.3s linear;
+                }
+            }
+            .menu {
+                a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #000;
+                    margin-left: 30px;
+                    transition: 0.2s linear;
+                }
+                a:hover {
+                    color: rgb(99, 99, 99);
+                }
+            }
+        }
+    }
+    .sticky {
+        background-color: #000;
+        padding: 16px 0;
+        .container {
+            #logo {
+                color: white;
+            }
+            .menu {
+                a {
+                    color: #fff;
+                }
+            }
+            .MudarMenu {
+                span {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    header {
+        .navbar {
+            .container {
+                .MudarMenu {
+                    display: block;
+                    span {
+                        background-color: rgb(0, 85, 255);
+                    }
+                }
+                .menu {
+                    position: fixed;
+                    height: 100vh;
+                    width: 100%;
+                    background-color: rgb(0, 3, 25);
+                    top: 0;
+                    right: -100%;
+                    max-width: 300px;
+                    padding: 80px 50px;
+                    transition: 0.3s linear;
+                    a {
+                        color: #fff;
+                        display: block;
+                        font-size: 30px;
+                        margin: 30px 0;
+                    }
+                    a:hover {
+                        color: rgb(194, 194, 194);
+                    }
+                }
+                .menu.pressionar {
+                    right: 0;
+                }
+            }
+            .MudarMenu.pressionar {
+                span:nth-child(1) {
+                    transform: rotate(-45deg);
+                    top: 4px;
+                }
+                span:nth-child(2) {
+                    opacity: 0;
+                }
+                span:nth-child(3) {
+                    transform: rotate(45deg);
+                    bottom: 14px;
+                }
+            }
+        }
+    }
+    .sticky {
+        background-color: #000;
+        .container {
+            .menu {
+                background-color: rgb(20, 20, 20);
+                a {
+                    color: #fff;
+                }
+            }
+            .MudarMenu {
+                span {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+main {
+    width: 100%;
+    #banners {
+        text-align: center;
+
+        .b1 {
+            color: #000;
+            background-image: url(../imagens/jenn-evelyn-ann-uydoe_ayjqs-unsplash.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            .container {
+                width: calc(100% - 64px);
+                .content {
+                    color: #000;
+                }
+                .button {
+                    a {
+                        color: #fff;
+                        margin-right: 0.5em;
+                        margin-bottom: 0.5em;
+                        display: inline-block;
+                        margin: 15px 30px;
+                        width: 180px;
+                        font-size: 20px;
+                        font-weight: 500;
+                        border-radius: 70px;
+                        padding: 10px 0;
+                        background-color: #3E7D98;
+                        transition: .2s linear;
+                    }
+                    a:hover{
+                        background-color: #2f5f74;
+                    }
+                    a:nth-child(2) {
+                        border: 1px solid #fff;
+                        background-color: transparent;
+                    }
+                    a:nth-child(2):hover {
+                        border: 1px solid #2f5f74;
+                        color: #2f5f74;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
